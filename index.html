@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<!--<embed src="love.mp3" autostart="true" loop="true" hidden="true"></embed>-->
+
+	<title>天天在一起</title>
+	
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="./jscss/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="./jscss/jquery.js"></script>
+	<script type="text/javascript" src="./jscss/garden.js"></script>
+</head>
+
+<body>
+	<audio src="love.mp3" autoplay></audio>
+
+	<div id="mainDiv">
+		<div id="content" style="width: 1160px; height: 625px; margin-top: 52px; margin-left: 220px;">
+			<div id="code" style="margin-top: 62.5px;">
+			<br>
+			<br>
+
+				<span style="margin-left: 80px;" size="10" class="string">蒹葭苍苍，白露为霜</span><br>
+				<span style="margin-left: 80px;" size="10" class="string">所谓伊人，在水一方</span><br>
+				<span style="margin-left: 80px;" size="10" class="string">情不知所起，一往而深</span><br>
+				<span style="margin-left: 80px;" size="10" class="string">生者可以死，死可以生</span><br>
+
+				<span style="margin-left: 80px;" class="keyword">一行写你 </span><br>
+				<span style="margin-left: 80px;" class="keyword">一行写我 </span><br>
+				<span style="margin-left: 80px;" class="keyword"> 剩下一行写我们</span><br>
+
+
+
+			</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>
+			<div id="loveHeart">
+				<canvas id="garden" width="670" height="625"></canvas>
+				<div id="words">
+					<div id="messages">
+						&nbsp;&nbsp;宝宝&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<br>我们已经走过了<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for
+						<br>
+						<div id="elapseClock">&nbsp;&nbsp;&nbsp;&nbsp;<span class="digit">333</span> days <span class="digit">17</span> hrs <span class="digit"><br>&nbsp;&nbsp;07</span> mins <span class="digit">33</span> secs</div>
+					</div>
+					
+					<div id="loveu">
+						forever.<br>
+						<div class="signature">- hjp&mf</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var nolovetime = new Date();
+		nolovetime.setFullYear(2018, 8, 3);
+		nolovetime.setHours(0);
+		nolovetime.setMinutes(0);
+		nolovetime.setSeconds(0);
+		nolovetime.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 100);
+
+			timeElapse(nolovetime);
+			setInterval(function () {
+				timeElapse(nolovetime);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+
+
+</body></html>
